@@ -1,0 +1,2228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated Wellness Institute — Workforce Resilience for Trauma-Exposed Service Professions</title>
+<meta name="description" content="Two paired training programs from IWI: Mastering Resilience and Peer Support in Action. Course-and-book systems that move resilience from a workshop to a workforce capability — for law enforcement, fire, EMS, dispatch, healthcare, child welfare, and military organizations.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   TOKENS
+   ========================================================= */
+:root {
+  --primary:   #4c6c94;
+  --primary-d: #3a557a;
+  --slate:     #bfd2d8;
+  --sage:      #7da2a2;
+  --sage-d:    #5d8585;
+  --gold:      #f1d025;
+  --gold-d:    #d8b817;
+  --mustard:   #e9d385;
+  --cream:     #f5ecd0;
+  --paper:     #FAF8F4;
+  --paper-2:   #f2efe7;
+  --ink:       #2E2E2E;
+  --ink-soft:  #4a4a4a;
+  --line:      rgba(46,46,46,0.10);
+  --line-2:    rgba(46,46,46,0.06);
+
+  --serif: 'Cormorant Garamond', 'Hoefler Text', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --maxw: 1240px;
+  --gut:  clamp(20px, 4vw, 56px);
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+
+  --shadow-sm: 0 1px 2px rgba(46,46,46,0.06), 0 2px 4px rgba(46,46,46,0.04);
+  --shadow-md: 0 8px 24px -8px rgba(46,46,46,0.18), 0 2px 6px rgba(46,46,46,0.06);
+  --shadow-lg: 0 30px 60px -20px rgba(46,46,46,0.28), 0 10px 24px -8px rgba(46,46,46,0.14);
+  --shadow-book: 0 50px 80px -30px rgba(76,108,148,0.45), 0 20px 40px -16px rgba(46,46,46,0.25);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: var(--r-sm); }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+input, textarea, select { font: inherit; color: inherit; }
+
+::selection { background: var(--gold); color: var(--ink); }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gut); }
+
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0.07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+main, header, footer, .sticky-cta { position: relative; z-index: 2; }
+
+/* =========================================================
+   TYPE
+   ========================================================= */
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
+h1 { font-size: clamp(40px, 6.4vw, 76px); line-height: 1.02; font-weight: 500; letter-spacing: -0.025em; }
+h2 { font-size: clamp(30px, 4.2vw, 52px); line-height: 1.08; font-weight: 500; letter-spacing: -0.02em; }
+h3 { font-size: clamp(20px, 2.2vw, 26px); line-height: 1.18; font-weight: 600; }
+h4 { font-size: 17px; line-height: 1.3; font-weight: 600; }
+
+.italic { font-style: italic; }
+.serif  { font-family: var(--serif); }
+
+p.lead { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; color: var(--ink-soft); }
+p { color: var(--ink-soft); }
+
+.section-marker {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 18px;
+}
+.section-marker .num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-d);
+  font-weight: 500;
+}
+.section-marker .label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+.section-marker .rule { flex: 1; height: 1px; background: var(--line); }
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 26px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn-primary { background: var(--ink); color: var(--paper); box-shadow: var(--shadow-md); }
+.btn-primary:hover { background: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+.btn-primary .arrow { transition: transform 200ms ease; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+.btn-gold { background: var(--gold); color: var(--ink); box-shadow: 0 0 0 1px var(--gold-d) inset, var(--shadow-md); }
+.btn-gold:hover { background: var(--gold-d); transform: translateY(-1px); }
+
+.btn-ghost { color: var(--ink); border: 1px solid rgba(46,46,46,0.25); background: transparent; }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.btn-light { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+.btn-light:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.btn-sm { padding: 11px 18px; font-size: 13px; }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(250, 248, 244, 0.78);
+  border-bottom: 1px solid var(--line-2);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px var(--gut);
+  max-width: var(--maxw); margin: 0 auto;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-rings { display: inline-flex; }
+.brand-rings .ring { width: 18px; height: 18px; border: 2px solid var(--primary); border-radius: 50%; }
+.brand-rings .ring + .ring { margin-left: -7px; }
+.brand-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.01em;
+}
+.brand-name .full { display: none; }
+.brand-name .short { display: inline; letter-spacing: 0.06em; }
+@media (min-width: 700px) {
+  .brand-name .full { display: inline; }
+  .brand-name .short { display: none; }
+}
+.nav-links { display: none; gap: 30px; font-size: 13px; font-weight: 500; color: var(--ink-soft); }
+@media (min-width: 1000px) { .nav-links { display: flex; } }
+.nav-links a { position: relative; padding: 4px 0; transition: color 180ms ease; }
+.nav-links a:hover { color: var(--primary); }
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; right: 100%; bottom: 0;
+  height: 1px; background: var(--primary); transition: right 250ms ease;
+}
+.nav-links a:hover::after { right: 0; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  padding: clamp(48px, 7vw, 88px) 0 clamp(56px, 7vw, 96px);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -10%; right: -8%;
+  width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
+  background: radial-gradient(circle at center, var(--mustard) 0%, transparent 65%);
+  opacity: 0.5; pointer-events: none; z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -20%; left: -10%;
+  width: 50vw; height: 50vw; max-width: 500px; max-height: 500px;
+  background: radial-gradient(circle at center, var(--slate) 0%, transparent 60%);
+  opacity: 0.35; pointer-events: none; z-index: 0;
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(40px, 6vw, 72px);
+  align-items: center; position: relative; z-index: 2;
+}
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 1.1fr 1fr; } }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 24px;
+  padding: 7px 16px 7px 12px;
+  background: rgba(76, 108, 148, 0.08);
+  border: 1px solid rgba(76, 108, 148, 0.18);
+  border-radius: 999px;
+}
+.hero-eyebrow .dot {
+  width: 7px; height: 7px; background: var(--gold); border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(241,208,37,0.18);
+}
+.hero-eyebrow span {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--primary);
+}
+.hero h1 .accent {
+  font-style: italic; color: var(--primary); position: relative;
+}
+.hero h1 .accent::after {
+  content: ''; position: absolute; left: -2%; right: -2%; bottom: 0.08em;
+  height: 0.32em; background: var(--gold); z-index: -1;
+  border-radius: 2px; opacity: 0.85;
+}
+.hero-sub {
+  margin-top: 26px;
+  max-width: 580px;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.hero-cta-row {
+  margin-top: 32px;
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+}
+.hero-meta {
+  margin-top: 28px;
+  display: flex; align-items: center; gap: 18px;
+  flex-wrap: wrap;
+  font-size: 13px; color: var(--ink-soft);
+}
+.hero-meta .meta-item { display: inline-flex; align-items: center; gap: 6px; }
+.hero-meta .meta-item svg { color: var(--sage); flex-shrink: 0; }
+.hero-meta .pipe { color: var(--line); }
+
+/* Two-book stage */
+.book-stage {
+  position: relative;
+  display: flex; justify-content: center; align-items: center;
+  perspective: 1400px;
+  padding: 30px 0;
+  min-height: 460px;
+}
+.book {
+  position: relative;
+  width: clamp(220px, 30vw, 320px);
+  aspect-ratio: 0.773 / 1;
+  transform: rotateY(-15deg) rotateX(3deg) rotateZ(-1deg);
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.book-stage:hover .book { transform: rotateY(-9deg) rotateX(1deg) rotateZ(0deg) translateY(-4px); }
+
+.book-img-wrap {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px 6px 6px 2px;
+  overflow: hidden;
+  box-shadow: var(--shadow-book);
+}
+.book-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* Spine darkening */
+.book-img-wrap::before {
+  content: '';
+  position: absolute; left: 0; top: 0; bottom: 0; width: 14px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.32), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+/* Spine highlight */
+.book-img-wrap::after {
+  content: '';
+  position: absolute; left: 14px; top: 0; bottom: 0; width: 1px;
+  background: rgba(255,255,255,0.15);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Floating context badges */
+.book-badges {
+  position: absolute;
+  top: -10px; right: -10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 5;
+  align-items: flex-end;
+}
+.badge {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--line);
+  transform: rotate(3deg);
+  white-space: nowrap;
+}
+.badge.gold {
+  background: var(--gold);
+  border-color: var(--gold-d);
+  transform: rotate(-3deg);
+}
+
+/* =========================================================
+   PAIN POINTS BAR
+   ========================================================= */
+.painbar {
+  background: var(--ink); color: var(--paper);
+  padding: 22px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.painbar-inner {
+  display: flex; align-items: center; gap: clamp(20px, 3vw, 40px);
+  flex-wrap: wrap; justify-content: center;
+}
+.painbar-label {
+  font-size: 10px; font-weight: 600; letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(245,245,245,0.55);
+}
+.painbar-list {
+  display: flex; flex-wrap: wrap; gap: clamp(14px, 2.5vw, 32px);
+  align-items: center;
+  justify-content: center;
+}
+.painbar-item {
+  font-family: var(--serif);
+  font-size: clamp(14px, 1.4vw, 17px);
+  font-style: italic;
+  color: rgba(245,245,245,0.92);
+  font-weight: 500;
+}
+.painbar-item .dot {
+  display: inline-block; width: 4px; height: 4px;
+  background: var(--gold); border-radius: 50%;
+  margin: 0 12px 3px 0; vertical-align: middle;
+}
+
+/* =========================================================
+   PROBLEM SECTION
+   ========================================================= */
+.problem {
+  padding: clamp(80px, 10vw, 130px) 0;
+}
+.problem-grid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(40px, 5vw, 72px);
+}
+@media (min-width: 900px) { .problem-grid { grid-template-columns: 0.85fr 1.15fr; align-items: start; } }
+.problem h2 .underline { position: relative; display: inline-block; }
+.problem h2 .underline::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -4px;
+  height: 2px; background: var(--gold);
+}
+.problem-body p { margin-bottom: 18px; font-size: 17px; line-height: 1.65; }
+.problem-body p:last-child { margin-bottom: 0; }
+.problem-body strong { color: var(--ink); font-weight: 600; }
+
+.problem-issues {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+@media (min-width: 600px) { .problem-issues { grid-template-columns: 1fr 1fr; } }
+.issue { background: var(--paper); padding: 24px 22px; }
+.issue-num {
+  font-family: var(--serif);
+  font-size: 28px;
+  line-height: 1;
+  font-style: italic;
+  color: var(--gold-d);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.issue h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: var(--ink); }
+.issue p { font-size: 13.5px; line-height: 1.5; color: var(--ink-soft); }
+
+/* =========================================================
+   PAIRED MODEL EXPLAINER
+   ========================================================= */
+.paired {
+  background: var(--cream);
+  padding: clamp(80px, 10vw, 130px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.paired-header {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  max-width: 980px;
+}
+@media (min-width: 800px) { .paired-header { grid-template-columns: 1fr 1fr; align-items: end; } }
+.paired-header p { font-size: 17px; line-height: 1.6; max-width: 520px; }
+
+.paired-cols {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+  position: relative;
+}
+@media (min-width: 900px) { .paired-cols { grid-template-columns: 1fr 1fr; } }
+
+.paired-col {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 32px 30px;
+  position: relative;
+}
+.paired-col-icon {
+  width: 44px; height: 44px;
+  background: var(--primary);
+  color: var(--paper);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-style: italic; font-size: 22px; font-weight: 500;
+  margin-bottom: 18px;
+}
+.paired-col:nth-child(2) .paired-col-icon { background: var(--gold); color: var(--ink); }
+.paired-col h3 { font-size: 22px; margin-bottom: 12px; }
+.paired-col p { font-size: 15px; line-height: 1.6; }
+
+.paired-result {
+  text-align: center;
+  margin-top: clamp(40px, 5vw, 60px);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: var(--primary);
+  line-height: 1.3;
+  font-weight: 500;
+}
+.paired-result span {
+  background: var(--paper);
+  padding: 4px 14px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+}
+
+/* =========================================================
+   PROGRAMS SHOWCASE
+   ========================================================= */
+.programs {
+  padding: clamp(80px, 10vw, 130px) 0;
+}
+.programs-header {
+  max-width: 760px;
+  margin-bottom: clamp(40px, 5vw, 60px);
+}
+.programs-header p { margin-top: 18px; font-size: 17px; line-height: 1.6; }
+
+.program-grid {
+  display: grid; grid-template-columns: 1fr; gap: 28px;
+}
+@media (min-width: 900px) { .program-grid { grid-template-columns: 1fr 1fr; } }
+
+.program {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 36px 36px 36px;
+  position: relative;
+  display: flex; flex-direction: column;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+.program:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.program-tag {
+  position: absolute;
+  top: 24px; right: 24px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  padding: 6px 12px;
+  background: var(--paper-2);
+  border-radius: 999px;
+}
+.program-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-d);
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.program h3 {
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-family: var(--serif);
+}
+.program-edition {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sage);
+  margin-bottom: 20px;
+  letter-spacing: 0.02em;
+}
+.program-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+
+.program-pieces {
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+  margin-bottom: 24px;
+  display: grid;
+  gap: 16px;
+}
+.piece {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.piece-icon {
+  width: 36px; height: 36px;
+  background: var(--mustard);
+  border-radius: var(--r-sm);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.piece-content .piece-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 3px;
+}
+.piece-content .piece-name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.piece-content .piece-meta {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+
+.program-features {
+  list-style: none;
+  margin-bottom: 24px;
+  display: grid;
+  gap: 8px;
+}
+.program-features li {
+  display: flex; gap: 10px; align-items: start;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.program-features .check {
+  flex-shrink: 0;
+  width: 16px; height: 16px;
+  margin-top: 3px;
+  color: var(--primary);
+}
+
+.program-cta {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px dashed var(--line);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.program-cta .amazon-link {
+  font-size: 12.5px;
+  color: var(--sage);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  letter-spacing: 0.02em;
+}
+.program-cta .amazon-link:hover { color: var(--primary); }
+
+/* =========================================================
+   PEACE MODEL
+   ========================================================= */
+.peace {
+  background: var(--paper-2);
+  padding: clamp(80px, 10vw, 130px) 0;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.peace::before {
+  content: 'P E A C E';
+  position: absolute;
+  top: 24px; right: -60px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(110px, 13vw, 180px);
+  font-weight: 400;
+  color: rgba(76, 108, 148, 0.05);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.peace-header {
+  max-width: 760px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+  position: relative;
+}
+.peace-header p { margin-top: 18px; font-size: 17px; line-height: 1.55; }
+
+.peace-grid {
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 700px) { .peace-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .peace-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; } }
+
+.peace-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 26px 22px 28px;
+  position: relative;
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  display: flex; flex-direction: column;
+  min-height: 280px;
+}
+.peace-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.peace-card .letter {
+  font-family: var(--serif);
+  font-size: 64px;
+  line-height: 0.85;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.peace-card:nth-child(1) .letter { color: var(--primary); }
+.peace-card:nth-child(2) .letter { color: var(--sage); }
+.peace-card:nth-child(3) .letter { color: var(--gold-d); }
+.peace-card:nth-child(4) .letter { color: var(--primary); }
+.peace-card:nth-child(5) .letter { color: var(--sage); }
+.peace-card .num {
+  position: absolute;
+  top: 20px; right: 20px;
+  font-size: 10.5px; font-weight: 600;
+  color: var(--sage); letter-spacing: 0.1em;
+}
+.peace-card h3 {
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-family: var(--sans);
+  letter-spacing: -0.01em;
+}
+.peace-card p { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); }
+
+/* =========================================================
+   OUTCOMES
+   ========================================================= */
+.outcomes {
+  padding: clamp(80px, 10vw, 130px) 0;
+}
+.outcomes-header { max-width: 760px; margin-bottom: clamp(36px, 5vw, 56px); }
+.outcomes-header p { margin-top: 18px; font-size: 17px; line-height: 1.6; }
+
+.outcome-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 700px) { .outcome-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .outcome-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.outcome {
+  background: var(--paper);
+  border-left: 3px solid var(--primary);
+  padding: 22px 24px 24px;
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  transition: transform 240ms ease, border-color 240ms ease;
+}
+.outcome:nth-child(odd) { border-left-color: var(--gold-d); }
+.outcome:nth-child(3n) { border-left-color: var(--sage); }
+.outcome:hover { transform: translateX(4px); }
+.outcome-num {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.outcome h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--ink); letter-spacing: -0.005em; }
+.outcome p { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); }
+
+/* =========================================================
+   PULL QUOTE
+   ========================================================= */
+.pullquote {
+  background: var(--primary); color: var(--paper);
+  padding: clamp(64px, 8vw, 100px) 0;
+  position: relative; overflow: hidden;
+}
+.pullquote::before {
+  content: '"';
+  position: absolute; top: -40px; left: 4%;
+  font-family: var(--serif);
+  font-size: clamp(220px, 26vw, 380px);
+  line-height: 1;
+  color: rgba(255,255,255,0.07);
+  font-style: italic;
+}
+.pullquote-inner {
+  position: relative; max-width: 960px; margin: 0 auto; text-align: center;
+}
+.pullquote blockquote {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(24px, 3.2vw, 38px);
+  line-height: 1.25; font-weight: 400;
+  color: var(--paper); letter-spacing: -0.01em;
+}
+.pullquote blockquote .gold-mark {
+  background: var(--gold); color: var(--ink);
+  padding: 0 10px; font-style: normal; font-weight: 600;
+}
+.pullquote cite {
+  display: block; margin-top: 28px;
+  font-style: normal; font-size: 11px; letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7); font-weight: 500;
+  font-family: var(--sans);
+}
+
+/* =========================================================
+   AUDIENCE / BUILT FOR
+   ========================================================= */
+.audience { padding: clamp(80px, 10vw, 130px) 0; }
+.audience-header {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+  margin-bottom: 48px;
+}
+@media (min-width: 800px) { .audience-header { grid-template-columns: 1fr 1fr; align-items: end; } }
+.audience-header p { font-size: 17px; line-height: 1.6; max-width: 480px; }
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (min-width: 700px) { .audience-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .audience-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.aud-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 22px 20px 24px;
+  text-align: left;
+  transition: background 240ms ease, border-color 240ms ease, transform 240ms ease;
+}
+.aud-card:hover { background: var(--mustard); border-color: var(--gold-d); }
+.aud-card-cta {
+  background: var(--paper-2);
+  border-style: dashed;
+  display: block;
+  cursor: pointer;
+}
+.aud-card-cta:hover { background: var(--gold); border-color: var(--gold-d); border-style: solid; }
+.aud-card-cta:hover h4 { color: var(--ink); }
+.aud-icon {
+  width: 26px; height: 26px;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+.aud-card h4 {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--sans);
+  letter-spacing: -0.005em;
+  margin-bottom: 4px;
+  line-height: 1.25;
+}
+.aud-card p {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   IMPLEMENTATION
+   ========================================================= */
+.implementation {
+  background: var(--paper-2);
+  padding: clamp(80px, 10vw, 130px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.impl-grid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(40px, 5vw, 72px);
+  align-items: start;
+}
+@media (min-width: 900px) { .impl-grid { grid-template-columns: 0.9fr 1.1fr; } }
+
+.impl-intro h2 { margin-bottom: 22px; }
+.impl-intro p { font-size: 16.5px; line-height: 1.6; }
+
+.impl-steps { list-style: none; }
+.impl-step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.impl-step:first-child { padding-top: 0; }
+.impl-step:last-child { border-bottom: none; padding-bottom: 0; }
+.impl-step-num {
+  width: 44px; height: 44px;
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.impl-step h4 {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-family: var(--sans);
+  letter-spacing: -0.005em;
+}
+.impl-step p { font-size: 14px; line-height: 1.55; color: var(--ink-soft); }
+
+.impl-credential {
+  margin-top: 22px;
+  padding: 16px 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.impl-credential-mark {
+  width: 36px; height: 36px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--ink);
+}
+.impl-credential-text { font-size: 12.5px; line-height: 1.45; color: var(--ink-soft); }
+.impl-credential-text strong { color: var(--ink); font-weight: 600; }
+
+/* =========================================================
+   AUTHORS
+   ========================================================= */
+.authors { padding: clamp(80px, 10vw, 130px) 0; }
+.authors-header { max-width: 720px; margin-bottom: 48px; }
+.authors-grid {
+  display: grid; grid-template-columns: 1fr; gap: 48px;
+}
+@media (min-width: 800px) { .authors-grid { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+.author {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.author-avatar {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--sage) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 36px; font-weight: 500;
+  color: var(--paper); font-style: italic;
+  position: relative; flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+.author-avatar::after {
+  content: '';
+  position: absolute; inset: -4px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.author h3 { font-size: 22px; font-weight: 600; font-family: var(--serif); margin-bottom: 4px; color: var(--ink); }
+.author .creds {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 14px;
+}
+.author p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
+
+/* =========================================================
+   REVIEWS
+   ========================================================= */
+.reviews {
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: var(--paper-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.reviews-header { text-align: center; margin-bottom: 48px; }
+.reviews-header h2 { max-width: 780px; margin: 0 auto; }
+
+.review-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 22px;
+}
+@media (min-width: 700px) { .review-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .review-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.review {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 28px 26px 26px;
+  position: relative;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+.review:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.review-quote {
+  font-family: var(--serif);
+  font-size: 19px; line-height: 1.32;
+  font-weight: 500; color: var(--ink);
+  margin-bottom: 14px;
+}
+.review-body {
+  font-size: 13.5px; line-height: 1.6;
+  color: var(--ink-soft); margin-bottom: 22px;
+}
+.review-author {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-2);
+}
+.review-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--mustard);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 15px; font-weight: 600;
+  color: var(--ink); flex-shrink: 0;
+}
+.review-meta .name { font-size: 12.5px; font-weight: 600; color: var(--ink); }
+.review-meta .role { font-size: 11px; color: var(--sage); letter-spacing: 0.04em; margin-top: 1px; }
+
+/* =========================================================
+   FINAL CTA + FORM
+   ========================================================= */
+.final-cta {
+  background: var(--ink); color: var(--paper);
+  padding: clamp(80px, 10vw, 120px) 0;
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; top: -200px; left: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(241,208,37,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.final-cta::after {
+  content: '';
+  position: absolute; bottom: -200px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(125,162,162,0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
+.final-cta-grid {
+  position: relative;
+  display: grid; grid-template-columns: 1fr; gap: 48px;
+  align-items: start;
+}
+@media (min-width: 900px) { .final-cta-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.final-cta h2 {
+  color: var(--paper);
+  font-size: clamp(34px, 4.6vw, 54px);
+  margin-bottom: 22px;
+}
+.final-cta h2 .gold { color: var(--gold); font-style: italic; }
+.final-cta p {
+  font-size: 16.5px; line-height: 1.55;
+  color: rgba(245,245,245,0.78);
+  max-width: 540px; margin-bottom: 28px;
+}
+.final-cta-pillars {
+  list-style: none;
+  margin-top: 32px;
+  display: grid; gap: 12px;
+}
+.final-cta-pillars li {
+  display: flex; gap: 12px; align-items: start;
+  font-size: 14px;
+  color: rgba(245,245,245,0.85);
+}
+.final-cta-pillars .marker {
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+  color: var(--gold);
+}
+
+.contact-form {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 32px 30px;
+  box-shadow: var(--shadow-lg);
+}
+.contact-form .form-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 8px;
+}
+.contact-form h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.contact-form .form-sub {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.field {
+  display: block;
+  margin-bottom: 14px;
+}
+.field label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 6px;
+}
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  color: var(--ink);
+  font-family: var(--sans);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--paper);
+}
+.field textarea { resize: vertical; min-height: 84px; line-height: 1.5; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 500px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
+.contact-form .btn-gold {
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.contact-form .reassure {
+  margin-top: 12px;
+  font-size: 11.5px;
+  text-align: center;
+  color: var(--sage);
+  letter-spacing: 0.04em;
+}
+
+.contact-direct {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+.contact-direct a { color: var(--primary); font-weight: 500; }
+.contact-direct a:hover { text-decoration: underline; }
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq { padding: clamp(80px, 10vw, 130px) 0; }
+.faq-grid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(32px, 4vw, 64px);
+}
+@media (min-width: 800px) { .faq-grid { grid-template-columns: 1fr 1.6fr; } }
+.faq h2 { margin-bottom: 16px; }
+
+.faq-list { list-style: none; }
+.faq-item { border-bottom: 1px solid var(--line); }
+.faq-item:first-child { border-top: 1px solid var(--line); }
+.faq-q {
+  width: 100%;
+  text-align: left;
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.6vw, 21px);
+  font-weight: 500;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+.faq-q:hover { color: var(--primary); }
+.faq-q .icon {
+  flex-shrink: 0;
+  width: 26px; height: 26px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 240ms ease, background 240ms ease, color 240ms ease;
+}
+.faq-item.open .faq-q .icon {
+  transform: rotate(45deg);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 320ms ease, padding 320ms ease;
+}
+.faq-item.open .faq-a {
+  max-height: 600px;
+  padding-bottom: 22px;
+}
+.faq-a p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 720px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  padding: 48px 0 32px;
+}
+.footer-inner {
+  display: grid; grid-template-columns: 1fr;
+  gap: 28px; align-items: center;
+}
+@media (min-width: 700px) { .footer-inner { grid-template-columns: 1fr auto 1fr; } }
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 14px; text-align: center;
+}
+.footer-meta {
+  text-align: right;
+  font-size: 12px;
+  color: var(--sage); letter-spacing: 0.04em;
+}
+@media (max-width: 700px) { .footer-meta { text-align: left; } }
+.footer-bar {
+  margin-top: 28px; padding-top: 18px;
+  border-top: 1px solid var(--line-2);
+  font-size: 11px; color: var(--sage);
+  letter-spacing: 0.06em; text-align: center;
+}
+
+/* =========================================================
+   STICKY MOBILE CTA
+   ========================================================= */
+.sticky-cta {
+  position: fixed;
+  bottom: 16px; left: 16px; right: 16px;
+  background: var(--ink); color: var(--paper);
+  padding: 12px 16px;
+  border-radius: 999px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  z-index: 100;
+  transform: translateY(120%);
+  transition: transform 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-text {
+  font-family: var(--serif); font-style: italic;
+  font-size: 14px; color: var(--paper);
+}
+.sticky-cta .btn-gold { padding: 9px 16px; font-size: 12px; }
+@media (max-width: 700px) { .sticky-cta { display: flex; } }
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.fade-up.in { opacity: 1; transform: translateY(0); }
+
+.hero .stagger > * {
+  opacity: 0; transform: translateY(16px);
+  animation: heroIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hero .stagger > *:nth-child(1) { animation-delay: 80ms; }
+.hero .stagger > *:nth-child(2) { animation-delay: 200ms; }
+.hero .stagger > *:nth-child(3) { animation-delay: 340ms; }
+.hero .stagger > *:nth-child(4) { animation-delay: 480ms; }
+.hero .stagger > *:nth-child(5) { animation-delay: 620ms; }
+@keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
+
+.book-stage { animation: bookIn 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms both; }
+@keyframes bookIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+</style>
+</head>
+<body>
+
+<!-- ===========================================
+     NAV
+================================================ -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Integrated Wellness Institute home">
+      <span class="brand-rings" aria-hidden="true">
+        <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+      </span>
+      <span class="brand-name"><span class="full">Integrated Wellness Institute</span><span class="short">IWI</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#programs">Programs</a>
+      <a href="#peace">PEACE Model</a>
+      <a href="#outcomes">Outcomes</a>
+      <a href="#audience">Built For</a>
+      <a href="#implementation">Implementation</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="#consult" class="btn btn-primary btn-sm">
+      Schedule Consultation
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- ===========================================
+     HERO
+================================================ -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="stagger">
+      <div class="hero-eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Workforce Resilience for Trauma-Exposed Service Professions</span>
+      </div>
+      <h1>Resilience as a <span class="accent">workforce capability</span> — built for the organizations who can't afford to lose their people.</h1>
+      <p class="hero-sub">Two paired training programs from the Integrated Wellness Institute. <strong>Course-and-book systems</strong> that move resilience from a workshop to a permanent capability — adopted across your workforce, reinforced beyond the training room, and built for shift schedules and operational realities.</p>
+      <div class="hero-cta-row">
+        <a href="#consult" class="btn btn-primary">
+          Schedule a Consultation
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#programs" class="btn btn-ghost">Explore the Programs</a>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6L8 1Z" stroke-linejoin="round"/></svg>
+          NBCC ACEP No. 7535
+        </span>
+        <span class="pipe">|</span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4V8L11 10" stroke-linecap="round"/></svg>
+          Turnkey rollout
+        </span>
+        <span class="pipe">|</span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 13L6 9L9 12L14 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5H14V9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Bulk organizational licensing
+        </span>
+      </div>
+    </div>
+
+    <div class="book-stage" aria-label="Mastering Resilience book cover">
+      <div class="book">
+        <div class="book-img-wrap">
+          <img class="book-img" src="mastering_resilience_cover.jpg" alt="Mastering Resilience: Strategies for High-Demand Professionals — book cover">
+        </div>
+      </div>
+      <div class="book-badges" aria-hidden="true">
+        <div class="badge gold">Paired with our flagship course</div>
+        <div class="badge">Paperback · Kindle</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     PAIN POINT BAR
+================================================ -->
+<section class="painbar" aria-label="Workforce pain points addressed">
+  <div class="container painbar-inner">
+    <div class="painbar-label">Built for organizations addressing</div>
+    <div class="painbar-list">
+      <span class="painbar-item"><span class="dot" aria-hidden="true"></span>Burnout &amp; retention</span>
+      <span class="painbar-item"><span class="dot" aria-hidden="true"></span>Cumulative trauma exposure</span>
+      <span class="painbar-item"><span class="dot" aria-hidden="true"></span>Workforce readiness</span>
+      <span class="painbar-item"><span class="dot" aria-hidden="true"></span>Post-critical incident support</span>
+      <span class="painbar-item"><span class="dot" aria-hidden="true"></span>Enterprise scalability</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     THE PROBLEM
+================================================ -->
+<section class="problem fade-up">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">01</span>
+      <span class="label">The Problem</span>
+      <span class="rule"></span>
+    </div>
+    <div class="problem-grid">
+      <div>
+        <h2>Most organizational wellness programs aren't failing because of bad intent — they're failing because of bad <span class="underline">architecture</span>.</h2>
+      </div>
+      <div class="problem-body">
+        <p>One-day seminars don't change behavior. EAPs are reactive by design. Wellness apps don't reach across roles, ranks, or shifts. The cost shows up months later — in turnover, burnout, cumulative trauma exposure, and post-critical incidents that should have had infrastructure already in place.</p>
+        <p><strong>Resilience changes outcomes when it's a trained capability</strong> — practiced, reinforced, and embedded into how your workforce operates under load. That requires more than content. It requires a system designed to be adopted and sustained.</p>
+        <p>That's what we build.</p>
+
+        <div class="problem-issues">
+          <div class="issue">
+            <div class="issue-num">i.</div>
+            <h4>Cumulative trauma exposure goes unaddressed</h4>
+            <p>Without ongoing tools and shared language, exposure compounds — invisibly — across careers.</p>
+          </div>
+          <div class="issue">
+            <div class="issue-num">ii.</div>
+            <h4>Burnout drives preventable turnover</h4>
+            <p>Training and replacement costs accumulate years of value lost. Retention is a wellness outcome.</p>
+          </div>
+          <div class="issue">
+            <div class="issue-num">iii.</div>
+            <h4>Workforce readiness erodes silently</h4>
+            <p>Performance decline rarely announces itself. By the time it shows up in an incident, it's late.</p>
+          </div>
+          <div class="issue">
+            <div class="issue-num">iv.</div>
+            <h4>Post-incident support arrives reactively</h4>
+            <p>The infrastructure to support personnel after a critical incident must exist <em>before</em> the call.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     PAIRED MODEL EXPLAINER
+================================================ -->
+<section class="paired fade-up">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">02</span>
+      <span class="label">The Approach</span>
+      <span class="rule"></span>
+    </div>
+    <div class="paired-header">
+      <h2>Why we pair every course with a companion book.</h2>
+      <p>Training builds awareness. A book sustains it. Pairing the two is what moves resilience from a one-time event into a workforce capability your people return to during the periods that demand it most.</p>
+    </div>
+
+    <div class="paired-cols">
+      <div class="paired-col">
+        <div class="paired-col-icon" aria-hidden="true">A</div>
+        <h3>Adoption</h3>
+        <p>Initial training establishes shared language, frameworks, and skills across the workforce. Modules are built for shift schedules and operational realities — minimal disruption, maximum coverage.</p>
+      </div>
+      <div class="paired-col">
+        <div class="paired-col-icon" aria-hidden="true">R</div>
+        <h3>Reinforcement</h3>
+        <p>The companion book sustains the work. It's revisited months and years later, shared with peers, and extended into the home environment — reinforcing the training and the support system around your personnel.</p>
+      </div>
+    </div>
+
+    <div class="paired-result">
+      Higher completion. Stronger retention. <span>A capability that holds.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     PROGRAMS — TWO PRODUCT CARDS
+================================================ -->
+<section class="programs fade-up" id="programs">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">03</span>
+      <span class="label">The Programs</span>
+      <span class="rule"></span>
+    </div>
+    <div class="programs-header">
+      <h2>Two flagship programs. One framework.</h2>
+      <p>Both programs are built on IWI's PEACE Resilience Model — the same evidence-based foundation, applied to two distinct organizational needs: <strong>workforce-wide resilience</strong> and <strong>peer support team effectiveness</strong>.</p>
+    </div>
+
+    <div class="program-grid">
+      <!-- PROGRAM 1 -->
+      <article class="program">
+        <span class="program-tag">Workforce Program</span>
+        <div class="program-num">01</div>
+        <h3>Mastering Resilience</h3>
+        <div class="program-edition">First Responder Edition</div>
+        <p class="program-desc">A scalable, workforce-wide resilience training designed for trauma-exposed professionals. Embeds resilience as a daily, repeatable practice across the entire organization.</p>
+
+        <div class="program-pieces">
+          <div class="piece">
+            <div class="piece-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="11" rx="1"/><path d="M8 18h4M10 15v3" stroke-linecap="round"/><path d="M9 8L12 10L9 12V8Z" fill="currentColor"/></svg>
+            </div>
+            <div class="piece-content">
+              <div class="piece-label">Course</div>
+              <div class="piece-name">Mastering Resilience: First Responder Edition</div>
+              <div class="piece-meta">5 PEACE modules · 1.5 hours of video · 365-day access · self-paced or instructor-led · certificate of completion</div>
+            </div>
+          </div>
+          <div class="piece">
+            <div class="piece-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4C3 3 4 2 5 2H15C16 2 17 3 17 4V16C17 17 16 18 15 18H5C4 18 3 17 3 16V4Z" stroke-linejoin="round"/><path d="M7 6H13M7 9H13M7 12H11" stroke-linecap="round"/></svg>
+            </div>
+            <div class="piece-content">
+              <div class="piece-label">Companion Book</div>
+              <div class="piece-name">Mastering Resilience: Strategies for High-Demand Professionals</div>
+              <div class="piece-meta">By Drs. Kanter-Agliata &amp; Stewart-Spencer · paperback or Kindle · designed for marking up and revisiting</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="program-features">
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Built around the PEACE Resilience Model
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Implementation guide for in-service or academy integration
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Online, in-person, or hybrid delivery
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No additional curriculum development required
+          </li>
+        </ul>
+
+        <div class="program-cta">
+          <a href="#consult" class="btn btn-primary btn-sm">
+            Bring it to your organization
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- PROGRAM 2 -->
+      <article class="program">
+        <span class="program-tag">Peer Support Program</span>
+        <div class="program-num">02</div>
+        <h3>Peer Support in Action</h3>
+        <div class="program-edition">Skills for First Responders</div>
+        <p class="program-desc">A practical, competency-based training that equips peer support team members to protect, engage, assess, refer, and support their fellow personnel — turning peer support from goodwill into infrastructure.</p>
+
+        <div class="program-pieces">
+          <div class="piece">
+            <div class="piece-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="7" r="3"/><circle cx="14" cy="9" r="2.5"/><path d="M2 17C2 14 4 12 7 12C10 12 12 14 12 17" stroke-linecap="round"/><path d="M11 16C11 14 12.5 13 14 13C16 13 17 14.5 17 16" stroke-linecap="round"/></svg>
+            </div>
+            <div class="piece-content">
+              <div class="piece-label">Course</div>
+              <div class="piece-name">Peer Support in Action</div>
+              <div class="piece-meta">PEACE-anchored · 365-day course access · 4 quarterly team practice activities · self-paced + interactive webinar or in-person delivery</div>
+            </div>
+          </div>
+          <div class="piece">
+            <div class="piece-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4C3 3 4 2 5 2H15C16 2 17 3 17 4V16C17 17 16 18 15 18H5C4 18 3 17 3 16V4Z" stroke-linejoin="round"/><path d="M7 6H13M7 9H13M7 12H11" stroke-linecap="round"/></svg>
+            </div>
+            <div class="piece-content">
+              <div class="piece-label">Companion Book</div>
+              <div class="piece-name">Peer Support Blueprint <span style="color: var(--gold-d); font-weight: 600;">· Forthcoming</span></div>
+              <div class="piece-meta">A field reference for peer team members and program coordinators · ethical practice, communication, and team-level resilience</div>
+            </div>
+          </div>
+        </div>
+
+        <ul class="program-features">
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Identify and respond to stress and trauma in peers
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Communicate effectively in high-pressure situations
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Provide confidential and ethical peer support
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Strengthen personal and team resilience across the organization
+          </li>
+        </ul>
+
+        <div class="program-cta">
+          <a href="#consult" class="btn btn-primary btn-sm">
+            Train your peer team
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#consult" class="amazon-link">Notify me when the Blueprint releases →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     PEACE MODEL
+================================================ -->
+<section class="peace fade-up" id="peace">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">04</span>
+      <span class="label">The Methodology</span>
+      <span class="rule"></span>
+    </div>
+    <div class="peace-header">
+      <h2>The PEACE Resilience Model</h2>
+      <p>Five evidence-based components that build resilience as a daily, repeatable practice — refined through years of working directly with organizations operating under chronic stress and traumatic exposure. Both flagship programs are anchored in this framework.</p>
+    </div>
+
+    <div class="peace-grid">
+      <article class="peace-card">
+        <span class="num">01</span>
+        <span class="letter">P</span>
+        <h3>Psychoeducation on Trauma</h3>
+        <p>Identify the impact of trauma on the mind and body — and why understanding the mechanism is the first step toward managing it.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">02</span>
+        <span class="letter">E</span>
+        <h3>Expand Awareness</h3>
+        <p>Build emotional and environmental awareness so personnel can read their own state — and the situation — before either escalates.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">03</span>
+        <span class="letter">A</span>
+        <h3>Activate Healthy Habits</h3>
+        <p>Practical routines that meet needs across every level of wellbeing: physical, cognitive, emotional, and relational.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">04</span>
+        <span class="letter">C</span>
+        <h3>Coping with Acute Stress</h3>
+        <p>Evidence-based techniques personnel can use in the moment, on scene, on shift — not just in a quiet room afterward.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">05</span>
+        <span class="letter">E</span>
+        <h3>Establish a Plan</h3>
+        <p>An individualized plan personnel actually return to — for building resilience and maintaining wellbeing through a long career.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     OUTCOMES
+================================================ -->
+<section class="outcomes fade-up" id="outcomes">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">05</span>
+      <span class="label">What Organizations See</span>
+      <span class="rule"></span>
+    </div>
+    <div class="outcomes-header">
+      <h2>What changes when resilience becomes infrastructure.</h2>
+      <p>The outcomes organizations report when they implement IWI programs — across operations, leadership culture, and personnel readiness.</p>
+    </div>
+
+    <div class="outcome-grid">
+      <div class="outcome">
+        <div class="outcome-num">i.</div>
+        <h4>Workforce-wide shared language</h4>
+        <p>A common framework personnel can use across roles, ranks, shifts, and incidents. Resilience moves from concept to operational vocabulary.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">ii.</div>
+        <h4>Stronger retention &amp; reduced burnout indicators</h4>
+        <p>Personnel equipped to recognize and respond to cumulative stress — protecting careers and reducing the operational cost of preventable turnover.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">iii.</div>
+        <h4>Pre-critical incident readiness</h4>
+        <p>Infrastructure in place <em>before</em> the call, not assembled afterward. Faster response, better outcomes, less long-term impact.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">iv.</div>
+        <h4>Effective peer support, not symbolic</h4>
+        <p>Trained peer teams operating with skill, ethics, and clarity — moving beyond goodwill into a recognized organizational capability.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">v.</div>
+        <h4>Improved morale &amp; engagement</h4>
+        <p>Personnel feel seen, supported, and equipped. Leadership culture shifts when resilience is treated as a professional skill, not an HR program.</p>
+      </div>
+      <div class="outcome">
+        <div class="outcome-num">vi.</div>
+        <h4>Enterprise-wide scalability</h4>
+        <p>Repeatable across cohorts, academy classes, and divisions. Embed once into in-service and onboarding, then sustain it through reinforcement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     PULL QUOTE
+================================================ -->
+<section class="pullquote">
+  <div class="container pullquote-inner">
+    <blockquote>
+      Resilience is a <span class="gold-mark">protective, mitigating factor</span> in trauma exposure. Treat it like a workforce skillset — train it, reinforce it, and it will hold when the work demands the most of your people.
+    </blockquote>
+    <cite>From <em>Mastering Resilience</em> · Chapter 1</cite>
+  </div>
+</section>
+
+<!-- ===========================================
+     AUDIENCE — 13 ORG TYPES
+================================================ -->
+<section class="audience fade-up" id="audience">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">06</span>
+      <span class="label">Built For</span>
+      <span class="rule"></span>
+    </div>
+    <div class="audience-header">
+      <h2>Designed for the organizations who carry the weight of public safety, public health, and public service.</h2>
+      <p>If your workforce operates under chronic stress, traumatic exposure, or sustained performance pressure, IWI programs were built with you in mind. Initial focus areas:</p>
+    </div>
+
+    <div class="audience-grid">
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 6V12C4 17 7.5 20.5 12 22C16.5 20.5 20 17 20 12V6L12 2Z" stroke-linejoin="round"/><circle cx="12" cy="11" r="2"/></svg>
+        <h4>Sheriff's Offices</h4>
+        <p>Sworn deputies, corrections, court services, civilian staff.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 6V12C4 17 7.5 20.5 12 22C16.5 20.5 20 17 20 12V6L12 2Z" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h4>Police Departments</h4>
+        <p>Municipal law enforcement — patrol, investigations, support.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8H17M7 12H17M7 16H13" stroke-linecap="round"/></svg>
+        <h4>State Law Enforcement</h4>
+        <p>Highway patrol, state police, statewide investigative units.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 10H21M9 6V4C9 3 9.5 2 10.5 2H13.5C14.5 2 15 3 15 4V6" stroke-linejoin="round"/></svg>
+        <h4>Corrections</h4>
+        <p>Department of Corrections, jails, detention, probation.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C12 2 6 7 6 13C6 17 8.5 20 12 20C15.5 20 18 17 18 13C18 7 12 2 12 2Z" stroke-linejoin="round"/><circle cx="12" cy="14" r="2"/></svg>
+        <h4>Fire Rescue</h4>
+        <p>Suppression, technical rescue, hazmat, prevention, support.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2V22M2 12H22" stroke-linecap="round"/><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+        <h4>EMS</h4>
+        <p>EMTs, paramedics, flight medics, tactical and critical care.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15 14" stroke-linecap="round"/><path d="M2 12H4M20 12H22M12 2V4M12 20V22" stroke-linecap="round"/></svg>
+        <h4>Emergency Communications</h4>
+        <p>911 dispatch and telecommunicators carrying the call without leaving the chair.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12L8 7H16L21 12V18H3V12Z" stroke-linejoin="round"/><path d="M9 18V14H15V18" /><circle cx="12" cy="5" r="2"/></svg>
+        <h4>Emergency Response Teams</h4>
+        <p>SWAT, tactical EMS, K9, specialized response, task forces.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M9 6V4C9 3 9.5 2 10.5 2H13.5C14.5 2 15 3 15 4V6" /><path d="M12 11V16M9.5 13.5H14.5" stroke-linecap="round"/></svg>
+        <h4>Emergency Medicine &amp; Trauma</h4>
+        <p>ER clinicians, trauma teams, hospital-based emergency care.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12C3 12 6 5 12 5C18 5 21 12 21 12C21 12 18 19 12 19C6 19 3 12 3 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h4>Trauma Nursing &amp; Critical Care</h4>
+        <p>ICU, trauma nursing, hospital-based critical care teams.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C7 2 4 5 4 9V19C4 20 5 21 6 21H18C19 21 20 20 20 19V9C20 5 17 2 12 2Z" stroke-linejoin="round"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/><path d="M8 16C9 17 10 17.5 12 17.5C14 17.5 15 17 16 16" stroke-linecap="round"/></svg>
+        <h4>Child Welfare / CPS</h4>
+        <p>Caseworkers, investigators, supervisors carrying secondary trauma.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 22V14L12 9L19 14V22" stroke-linejoin="round"/><path d="M9 22V17H15V22"/><circle cx="12" cy="5" r="3"/></svg>
+        <h4>Military &amp; Veterans</h4>
+        <p>Active duty, reservists, military support roles, returning service members.</p>
+      </div>
+      <div class="aud-card">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V8L12 3L20 8V21" stroke-linejoin="round"/><path d="M9 21V14H15V21"/><path d="M8 11H10M14 11H16" stroke-linecap="round"/><circle cx="12" cy="7" r="0.5" fill="currentColor"/></svg>
+        <h4>Public Safety Leadership</h4>
+        <p>Chiefs, sheriffs, command staff, and executive teams setting organizational direction.</p>
+      </div>
+
+      <a href="#consult" class="aud-card aud-card-cta">
+        <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color: var(--gold-d);"><circle cx="12" cy="12" r="9"/><path d="M9 12H15M12 9V15" stroke-linecap="round"/></svg>
+        <h4>Another discipline?</h4>
+        <p>If your workforce carries chronic stress or trauma exposure, the framework likely applies. Let's talk. <span style="color: var(--primary); font-weight: 500;">→</span></p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     IMPLEMENTATION
+================================================ -->
+<section class="implementation fade-up" id="implementation">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">07</span>
+      <span class="label">Implementation</span>
+      <span class="rule"></span>
+    </div>
+    <div class="impl-grid">
+      <div class="impl-intro">
+        <h2>Built for rollout — not just delivery.</h2>
+        <p>Programs are turnkey. No additional curriculum development required. We support your team through implementation decisions and rollout — and stay engaged afterward to reinforce what's been built.</p>
+
+        <div class="impl-credential">
+          <div class="impl-credential-mark" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10" cy="10" r="7"/><path d="M7 10L9 12L13 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="impl-credential-text">
+            <strong>NBCC Approved Continuing Education Provider · ACEP No. 7535.</strong> Eligible for continuing education credits across multiple disciplines.
+          </div>
+        </div>
+      </div>
+
+      <ol class="impl-steps">
+        <li class="impl-step">
+          <div class="impl-step-num">i</div>
+          <div>
+            <h4>Consultation &amp; scoping</h4>
+            <p>We start with a conversation. We understand your workforce, your existing wellness infrastructure, and what success looks like for your organization.</p>
+          </div>
+        </li>
+        <li class="impl-step">
+          <div class="impl-step-num">ii</div>
+          <div>
+            <h4>Implementation planning</h4>
+            <p>Mandatory or voluntary. In-service or academy. Phased or full cohort. On-site or remote. We help you make the six core decisions that determine whether the program becomes a workshop or a culture shift.</p>
+          </div>
+        </li>
+        <li class="impl-step">
+          <div class="impl-step-num">iii</div>
+          <div>
+            <h4>Rollout</h4>
+            <p>Online self-paced, instructor-led group delivery, or a hybrid. Bulk licensing for your workforce. Books distributed in physical or digital format. Designated training instructors supported with facilitation guidance.</p>
+          </div>
+        </li>
+        <li class="impl-step">
+          <div class="impl-step-num">iv</div>
+          <div>
+            <h4>Reinforcement &amp; sustainment</h4>
+            <p>Quarterly team practice activities (Peer Support in Action). Companion books that personnel keep and revisit. Optional ongoing engagement with our team for coaching and program iteration.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     AUTHORS
+================================================ -->
+<section class="authors fade-up">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">08</span>
+      <span class="label">The Clinicians Behind IWI</span>
+      <span class="rule"></span>
+    </div>
+    <div class="authors-header">
+      <h2>Doctorate-level clinicians.<br>Practitioner credibility.</h2>
+    </div>
+
+    <div class="authors-grid">
+      <div class="author">
+        <div class="author-avatar" aria-hidden="true">A</div>
+        <div>
+          <h3>Dr. Allison Kanter-Agliata</h3>
+          <div class="creds">PhD · BCC · CFRP</div>
+          <p>Co-founder of the Integrated Wellness Institute and a Board Certified Coach with deep experience supporting first responders, executives, and high-performing teams. Co-developer of the PEACE Resilience Model and the IWI training curriculum.</p>
+        </div>
+      </div>
+      <div class="author">
+        <div class="author-avatar" aria-hidden="true">S</div>
+        <div>
+          <h3>Dr. Sarah Stewart-Spencer</h3>
+          <div class="creds">PhD · LMHC · NCC · CFRP</div>
+          <p>Co-founder of IWI, Licensed Mental Health Counselor, and National Certified Counselor. Specializes in trauma exposure in high-demand professions and has built training programs adopted by departments and organizations across the country.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     REVIEWS — ORGANIZATIONAL LEADERSHIP
+================================================ -->
+<section class="reviews fade-up">
+  <div class="container">
+    <div class="reviews-header">
+      <div class="section-marker" style="justify-content: center;">
+        <span class="num">09</span>
+        <span class="label">From Organizational Leadership</span>
+      </div>
+      <h2>What chiefs, training commanders, and wellness directors say.</h2>
+    </div>
+
+    <div class="review-grid">
+      <article class="review">
+        <div class="review-quote">"Folds into our in-service schedule without disruption."</div>
+        <p class="review-body">We integrated Mastering Resilience into annual training without adding strain on staffing. The PEACE model gave us shared language across patrol, investigations, and dispatch. Practical from day one.</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">M</div>
+          <div class="review-meta">
+            <div class="name">Cmdr. M. R.</div>
+            <div class="role">Training Division Commander</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="review-quote">"The book is what makes it stick."</div>
+        <p class="review-body">We've moved from one-off wellness events to a real program — and the companion book is the spine of it. Personnel mark it up, share it, and bring it home. That's where the work continues.</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">D</div>
+          <div class="review-meta">
+            <div class="name">Chief D. H.</div>
+            <div class="role">Fire Chief</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review">
+        <div class="review-quote">"Finally, peer support that's a real capability — not a checkbox."</div>
+        <p class="review-body">Peer Support in Action gave our team the structure we'd been missing. Skills, ethics, communication, referral pathways. Our peer supporters now operate with confidence and clarity, and leadership treats it as the asset it is.</p>
+        <div class="review-author">
+          <div class="review-avatar" aria-hidden="true">K</div>
+          <div class="review-meta">
+            <div class="name">Director K. T.</div>
+            <div class="role">Wellness Program Director</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================
+     FINAL CTA + LEAD CAPTURE
+================================================ -->
+<section class="final-cta" id="consult">
+  <div class="container final-cta-grid">
+    <div>
+      <div class="section-marker">
+        <span class="num" style="color: var(--gold);">10</span>
+        <span class="label" style="color: rgba(245,245,245,0.65);">Schedule a Consultation</span>
+        <span class="rule" style="background: rgba(255,255,255,0.15);"></span>
+      </div>
+      <h2>Build resilience as a <span class="gold">capability</span>.<br>Not a hope.</h2>
+      <p>A short conversation is the easiest next step. We'll learn about your workforce, your wellness infrastructure, and your goals — and we'll show you exactly how IWI programs can fit into your operational reality.</p>
+
+      <ul class="final-cta-pillars">
+        <li>
+          <span class="marker" aria-hidden="true">
+            <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6L5 9L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Workforce-wide pricing &amp; organizational licensing</span>
+        </li>
+        <li>
+          <span class="marker" aria-hidden="true">
+            <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6L5 9L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Implementation guide &amp; rollout support included</span>
+        </li>
+        <li>
+          <span class="marker" aria-hidden="true">
+            <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6L5 9L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Eligible for continuing education credits (NBCC ACEP No. 7535)</span>
+        </li>
+        <li>
+          <span class="marker" aria-hidden="true">
+            <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6L5 9L10 3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span>Online, in-person, or hybrid delivery</span>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact-form" id="leadForm">
+      <div class="form-eyebrow">Speak with our team</div>
+      <h3>Let's talk about your organization.</h3>
+      <p class="form-sub">We'll respond within one business day. No marketing email lists, no cold outreach.</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required>
+        </div>
+        <div class="field">
+          <label for="role">Role / Title</label>
+          <input type="text" id="role" name="role" placeholder="e.g., Wellness Director">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="organization">Organization</label>
+        <input type="text" id="organization" name="organization" placeholder="Department or organization name" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="work email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="msg">What are you exploring?</label>
+        <textarea id="msg" name="msg" placeholder="A short note about your workforce, current wellness infrastructure, or what you're hoping to address."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold">
+        Request a Consultation
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
+      <div class="reassure">We respond within one business day · Direct to clinicians, not a sales team</div>
+
+      <div class="contact-direct">
+        <span>Or reach us directly:</span>
+        <a href="mailto:contact@theiwinstitute.com">contact@theiwinstitute.com</a>
+        <span>·</span>
+        <a href="tel:9046693345">904.669.3345</a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===========================================
+     FAQ
+================================================ -->
+<section class="faq fade-up" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <div class="section-marker">
+          <span class="num">11</span>
+          <span class="label">FAQ</span>
+        </div>
+        <h2>Common questions from organizational leadership.</h2>
+        <p style="margin-top: 14px;">Have a question we haven't covered? Reach out at <a href="mailto:contact@theiwinstitute.com" style="color: var(--primary); text-decoration: underline;">contact@theiwinstitute.com</a>.</p>
+      </div>
+
+      <ul class="faq-list">
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>What does pricing look like for an organization?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Pricing scales with workforce size. Bulk licensing is the standard model — per-personnel pricing for course access, with options for physical or digital companion books. Organizations often blend a full-cohort rollout for current personnel with ongoing per-recruit licensing through the academy. We'll quote based on your specific scope during the consultation.</p></div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>How long does implementation take?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Most organizations complete consultation and planning in 2–4 weeks, then roll out within the same training cycle. Full-cohort online rollouts typically aim for completion within 30 days; phased or quarterly rollouts span the year. The Mastering Resilience video content runs ~1.5 hours total — designed to integrate into in-service or academy schedules without major disruption.</p></div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>How is this different from our EAP?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>EAPs are reactive by design — personnel access support after a problem has surfaced. IWI programs are <em>preventive infrastructure</em>: they build resilience as a workforce capability before it's needed. The two work well together. Many organizations pair our programs with an existing EAP to create a complete continuum from prevention through post-incident support.</p></div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Can content be customized for our organization?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>The core content is intentionally turnkey — it works as designed, no organization-specific curriculum development required. We tailor implementation, not content: rollout sequencing, leadership engagement, training instructor selection, and integration into existing wellness infrastructure. For organizations with specific needs, we offer optional in-person facilitation that contextualizes the material to your discipline.</p></div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Are continuing education credits available?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Yes. The Integrated Wellness Institute is an NBCC Approved Continuing Education Provider (ACEP No. 7535). The First Responder Treatment Provider (CFRP) certification course is one example; CE eligibility varies by program. We'll confirm specific CE applicability for your discipline during scoping.</p></div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>Online, in-person, or hybrid — which is best?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>Both. Self-paced online provides scheduling flexibility and minimizes operational disruption. Instructor-led group delivery strengthens cultural integration and creates space for shared discussion. Many organizations use a hybrid: introduce the material in instructor-led sessions to establish shared understanding, then reinforce through individual completion and the companion book. We'll recommend the right model for your workforce during consultation.</p></div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            <span>What does sustainment look like after rollout?</span>
+            <span class="icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><p>The companion books are the primary sustainment mechanism — personnel revisit them during the periods that demand it most. For Peer Support in Action, four quarterly team practice activities reinforce skill development across the year. Optional ongoing engagement with our clinical team is available for coaching, program iteration, and leadership support.</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===========================================
+     FOOTER
+================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-rings" aria-hidden="true">
+          <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+        </span>
+        <div>
+          <div style="font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--primary);">Integrated Wellness Institute</div>
+          <div style="font-size: 11px; color: var(--sage); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px;">theiwinstitute.com</div>
+        </div>
+      </div>
+      <div class="footer-tag">From concept to capability.</div>
+      <div class="footer-meta">
+        <a href="mailto:contact@theiwinstitute.com" style="color: var(--ink-soft);">contact@theiwinstitute.com</a><br>
+        <span style="color: var(--ink-soft);">904.669.3345</span>
+      </div>
+    </div>
+    <div class="footer-bar">
+      © Integrated Wellness Institute · NBCC ACEP No. 7535 · <a href="#top" style="color: var(--primary);">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ===========================================
+     STICKY MOBILE CTA
+================================================ -->
+<div class="sticky-cta" id="stickyCta" role="complementary">
+  <span class="sticky-cta-text">Bring IWI to your organization</span>
+  <a href="#consult" class="btn btn-gold">Schedule</a>
+</div>
+
+<script>
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
+    document.querySelectorAll('.faq-q').forEach(q => q.setAttribute('aria-expanded', 'false'));
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+
+// Fade-up on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// Sticky mobile CTA
+const sticky = document.getElementById('stickyCta');
+const heroSection = document.querySelector('.hero');
+const stickyObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) sticky.classList.add('visible');
+    else sticky.classList.remove('visible');
+  });
+}, { threshold: 0.1 });
+stickyObs.observe(heroSection);
+
+// Lead form → mailto fallback (replace with your form handler / CRM endpoint when wiring up)
+document.getElementById('leadForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(this);
+  const subject = encodeURIComponent(`Consultation Request — ${data.get('organization') || 'IWI'}`);
+  const body = encodeURIComponent(
+    `Name: ${data.get('name')}\n` +
+    `Role: ${data.get('role')}\n` +
+    `Organization: ${data.get('organization')}\n` +
+    `Email: ${data.get('email')}\n` +
+    `Phone: ${data.get('phone')}\n\n` +
+    `Message:\n${data.get('msg')}`
+  );
+  window.location.href = `mailto:contact@theiwinstitute.com?subject=${subject}&body=${body}`;
+});
+</script>
+
+</body>
+</html>
