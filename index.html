@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated Wellness Institute — Resilience training for trauma-exposed service professions</title>
+<meta name="description" content="Integrated Wellness Institute (IWI) builds workforce resilience for first responders, military, healthcare, and high-demand service professions through evidence-based course-and-book training systems.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+:root {
+  --primary:   #4c6c94;
+  --primary-d: #3a557a;
+  --slate:     #bfd2d8;
+  --sage:      #7da2a2;
+  --sage-d:    #5d8585;
+  --gold:      #f1d025;
+  --gold-d:    #d8b817;
+  --mustard:   #e9d385;
+  --cream:     #f5ecd0;
+  --paper:     #FAF8F4;
+  --paper-2:   #f2efe7;
+  --ink:       #2E2E2E;
+  --ink-soft:  #4a4a4a;
+  --line:      rgba(46,46,46,0.10);
+  --line-2:    rgba(46,46,46,0.06);
+
+  --serif: 'Cormorant Garamond', 'Hoefler Text', Georgia, serif;
+  --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --maxw: 1180px;
+  --gut:  clamp(20px, 4vw, 56px);
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+
+  --shadow-sm: 0 1px 2px rgba(46,46,46,0.06), 0 2px 4px rgba(46,46,46,0.04);
+  --shadow-md: 0 8px 24px -8px rgba(46,46,46,0.18), 0 2px 6px rgba(46,46,46,0.06);
+  --shadow-lg: 0 30px 60px -20px rgba(46,46,46,0.28), 0 10px 24px -8px rgba(46,46,46,0.14);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+*:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: var(--r-sm); }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; }
+input, textarea { font: inherit; color: inherit; }
+
+::selection { background: var(--gold); color: var(--ink); }
+
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gut); }
+
+/* Subtle paper grain (inline SVG, no external file) */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence baseFrequency='0.85' numOctaves='2' seed='4'/><feColorMatrix values='0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0.07 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+main, header, footer { position: relative; z-index: 2; }
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
+h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; color: var(--ink); letter-spacing: -0.01em; }
+h1 { font-size: clamp(40px, 6.4vw, 76px); line-height: 1.02; letter-spacing: -0.025em; }
+h2 { font-size: clamp(30px, 4.2vw, 50px); line-height: 1.08; letter-spacing: -0.02em; }
+h3 { font-size: clamp(20px, 2.2vw, 26px); line-height: 1.18; font-weight: 600; }
+
+p { color: var(--ink-soft); }
+p.lead { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; }
+
+.eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--primary);
+}
+
+.section-marker {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 22px;
+}
+.section-marker .num {
+  font-family: var(--serif);
+  font-style: italic; font-size: 22px;
+  color: var(--gold-d); font-weight: 500;
+}
+.section-marker .label {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--primary);
+}
+.section-marker .rule { flex: 1; height: 1px; background: var(--line); }
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 26px;
+  font-family: var(--sans);
+  font-weight: 600; font-size: 14px;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  transition: transform 200ms ease, box-shadow 200ms ease, background 200ms ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn-primary { background: var(--ink); color: var(--paper); box-shadow: var(--shadow-md); }
+.btn-primary:hover { background: var(--primary); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+.btn-primary .arrow { transition: transform 200ms ease; }
+.btn-primary:hover .arrow { transform: translateX(3px); }
+
+.btn-gold { background: var(--gold); color: var(--ink); box-shadow: 0 0 0 1px var(--gold-d) inset, var(--shadow-md); }
+.btn-gold:hover { background: var(--gold-d); transform: translateY(-1px); }
+
+.btn-ghost { color: var(--ink); border: 1px solid rgba(46,46,46,0.25); background: transparent; }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.btn-sm { padding: 11px 18px; font-size: 13px; }
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(250, 248, 244, 0.78);
+  border-bottom: 1px solid var(--line-2);
+}
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px var(--gut);
+  max-width: var(--maxw); margin: 0 auto;
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-rings { display: inline-flex; }
+.brand-rings .ring { width: 18px; height: 18px; border: 2px solid var(--primary); border-radius: 50%; }
+.brand-rings .ring + .ring { margin-left: -7px; }
+.brand-name {
+  font-family: var(--serif);
+  font-size: 17px; font-weight: 600;
+  color: var(--primary); letter-spacing: 0.01em;
+}
+.brand-name .full { display: none; }
+.brand-name .short { display: inline; letter-spacing: 0.06em; }
+@media (min-width: 700px) {
+  .brand-name .full { display: inline; }
+  .brand-name .short { display: none; }
+}
+.nav-links {
+  display: none; gap: 30px;
+  font-size: 13px; font-weight: 500; color: var(--ink-soft);
+}
+@media (min-width: 950px) { .nav-links { display: flex; } }
+.nav-links a { position: relative; padding: 4px 0; transition: color 180ms ease; }
+.nav-links a:hover { color: var(--primary); }
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; right: 100%; bottom: 0;
+  height: 1px; background: var(--primary); transition: right 250ms ease;
+}
+.nav-links a:hover::after { right: 0; }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+  position: relative;
+  padding: clamp(48px, 8vw, 96px) 0 clamp(56px, 8vw, 104px);
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -10%; right: -8%;
+  width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
+  background: radial-gradient(circle at center, var(--mustard) 0%, transparent 65%);
+  opacity: 0.5; pointer-events: none; z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -20%; left: -10%;
+  width: 50vw; height: 50vw; max-width: 500px; max-height: 500px;
+  background: radial-gradient(circle at center, var(--slate) 0%, transparent 60%);
+  opacity: 0.35; pointer-events: none; z-index: 0;
+}
+
+.hero-grid {
+  display: grid; grid-template-columns: 1fr; gap: clamp(40px, 6vw, 72px);
+  align-items: center; position: relative; z-index: 2;
+}
+@media (min-width: 980px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-bottom: 24px;
+  padding: 7px 16px 7px 12px;
+  background: rgba(76, 108, 148, 0.08);
+  border: 1px solid rgba(76, 108, 148, 0.18);
+  border-radius: 999px;
+}
+.hero-eyebrow .dot {
+  width: 7px; height: 7px; background: var(--gold); border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(241,208,37,0.18);
+}
+.hero-eyebrow span {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--primary);
+}
+.hero h1 .accent {
+  font-style: italic; color: var(--primary); position: relative;
+}
+.hero h1 .accent::after {
+  content: ''; position: absolute; left: -2%; right: -2%; bottom: 0.08em;
+  height: 0.32em; background: var(--gold); z-index: -1;
+  border-radius: 2px; opacity: 0.85;
+}
+.hero-sub {
+  margin-top: 26px;
+  max-width: 560px;
+  font-size: clamp(16px, 1.35vw, 18px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.hero-cta-row {
+  margin-top: 32px;
+  display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
+}
+.hero-meta {
+  margin-top: 28px;
+  display: flex; align-items: center; gap: 18px;
+  flex-wrap: wrap;
+  font-size: 13px; color: var(--ink-soft);
+}
+.hero-meta .meta-item { display: inline-flex; align-items: center; gap: 6px; }
+.hero-meta .meta-item svg { color: var(--sage); flex-shrink: 0; }
+.hero-meta .pipe { color: var(--line); }
+
+/* Editorial mark composition (no external image needed) */
+.hero-mark {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  max-width: 440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+.hero-mark-from, .hero-mark-to {
+  font-family: var(--serif);
+  font-style: italic;
+  text-align: center;
+}
+.hero-mark-from {
+  font-size: clamp(20px, 2.4vw, 28px);
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+.hero-mark-to {
+  font-size: clamp(28px, 3.2vw, 38px);
+  color: var(--primary);
+  font-weight: 500;
+  line-height: 1;
+}
+.hero-mark-to::after {
+  content: '';
+  display: block;
+  width: 40px; height: 2px;
+  background: var(--gold);
+  margin: 14px auto 0;
+}
+.hero-mark-rings {
+  position: relative;
+  width: clamp(180px, 22vw, 240px);
+  height: clamp(120px, 14vw, 160px);
+}
+.hero-mark-rings .big-ring {
+  position: absolute;
+  top: 0;
+  width: clamp(110px, 13vw, 150px);
+  height: clamp(110px, 13vw, 150px);
+  border: 2.5px solid var(--primary);
+  border-radius: 50%;
+  transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.hero-mark-rings .big-ring:nth-child(1) {
+  left: 0;
+  border-color: var(--primary);
+}
+.hero-mark-rings .big-ring:nth-child(2) {
+  left: 50%; transform: translateX(-50%);
+  border-color: var(--sage);
+}
+.hero-mark-rings .big-ring:nth-child(3) {
+  right: 0;
+  border-color: var(--gold-d);
+}
+.hero-mark:hover .big-ring:nth-child(1) { transform: translate(-10px, -4px); }
+.hero-mark:hover .big-ring:nth-child(2) { transform: translateX(-50%) translateY(-2px); }
+.hero-mark:hover .big-ring:nth-child(3) { transform: translate(10px, -4px); }
+.hero-mark-meta {
+  display: flex;
+  gap: 32px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-top: 4px;
+}
+.hero-mark-meta span { position: relative; }
+.hero-mark-meta span::before {
+  content: '';
+  position: absolute;
+  left: 50%; top: -10px;
+  transform: translateX(-50%);
+  width: 4px; height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about {
+  padding: clamp(80px, 10vw, 130px) 0;
+  border-top: 1px solid var(--line-2);
+}
+.about-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 72px);
+}
+@media (min-width: 900px) { .about-grid { grid-template-columns: 0.85fr 1.15fr; align-items: start; } }
+.about-body p {
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.about-body p:last-child { margin-bottom: 0; }
+.about-body strong { color: var(--ink); font-weight: 600; }
+
+.about-pillars {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 700px) { .about-pillars { grid-template-columns: repeat(3, 1fr); } }
+.pillar {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 22px 20px 24px;
+  transition: transform 240ms ease, box-shadow 240ms ease;
+}
+.pillar:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.pillar-icon {
+  width: 32px; height: 32px;
+  margin-bottom: 14px;
+  color: var(--primary);
+}
+.pillar h4 {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--sans);
+  margin-bottom: 6px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.pillar p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   PROGRAMS
+   ========================================================= */
+.programs {
+  background: var(--cream);
+  padding: clamp(80px, 10vw, 130px) 0;
+}
+.programs-header {
+  max-width: 760px;
+  margin-bottom: clamp(40px, 5vw, 56px);
+}
+.programs-header p { margin-top: 18px; font-size: 17px; line-height: 1.6; }
+
+.program-grid {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+}
+@media (min-width: 900px) { .program-grid { grid-template-columns: 1fr 1fr; } }
+
+.program {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  padding: 32px 32px 28px;
+  position: relative;
+  display: flex; flex-direction: column;
+  transition: transform 280ms ease, box-shadow 280ms ease;
+}
+.program:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.program-tag {
+  position: absolute;
+  top: 22px; right: 22px;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sage);
+  padding: 6px 12px;
+  background: var(--paper-2);
+  border-radius: 999px;
+}
+.program-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold-d);
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1;
+}
+.program h3 {
+  font-size: clamp(22px, 2.2vw, 26px);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: var(--serif);
+  letter-spacing: -0.005em;
+}
+.program-edition {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sage);
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+.program-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 22px;
+}
+.program-features {
+  list-style: none;
+  margin-bottom: 26px;
+  display: grid;
+  gap: 9px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.program-features li {
+  display: flex; gap: 10px; align-items: start;
+  font-size: 13.5px;
+  color: var(--ink-soft);
+}
+.program-features .check {
+  flex-shrink: 0;
+  width: 16px; height: 16px;
+  margin-top: 3px;
+  color: var(--primary);
+}
+.program .btn { margin-top: auto; align-self: flex-start; }
+
+/* =========================================================
+   PEACE MODEL
+   ========================================================= */
+.peace {
+  padding: clamp(80px, 10vw, 130px) 0;
+  position: relative;
+  overflow: hidden;
+}
+.peace::before {
+  content: 'P E A C E';
+  position: absolute;
+  top: 24px; right: -50px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(110px, 13vw, 180px);
+  font-weight: 400;
+  color: rgba(76, 108, 148, 0.05);
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.peace-header {
+  max-width: 760px;
+  margin-bottom: clamp(36px, 5vw, 56px);
+  position: relative;
+}
+.peace-header p { margin-top: 18px; font-size: 17px; line-height: 1.55; }
+
+.peace-grid {
+  display: grid; grid-template-columns: 1fr; gap: 14px;
+}
+@media (min-width: 700px) { .peace-grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1100px) { .peace-grid { grid-template-columns: repeat(5, 1fr); gap: 12px; } }
+
+.peace-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  padding: 26px 22px 28px;
+  position: relative;
+  transition: transform 280ms ease, box-shadow 280ms ease, border-color 280ms ease;
+  display: flex; flex-direction: column;
+  min-height: 280px;
+}
+.peace-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+.peace-card .letter {
+  font-family: var(--serif);
+  font-size: 64px;
+  line-height: 0.85;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+.peace-card:nth-child(1) .letter { color: var(--primary); }
+.peace-card:nth-child(2) .letter { color: var(--sage); }
+.peace-card:nth-child(3) .letter { color: var(--gold-d); }
+.peace-card:nth-child(4) .letter { color: var(--primary); }
+.peace-card:nth-child(5) .letter { color: var(--sage); }
+.peace-card .num {
+  position: absolute;
+  top: 20px; right: 20px;
+  font-size: 10.5px; font-weight: 600;
+  color: var(--sage); letter-spacing: 0.1em;
+}
+.peace-card h3 {
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 10px;
+  font-family: var(--sans);
+  letter-spacing: -0.01em;
+}
+.peace-card p { font-size: 13.5px; line-height: 1.55; color: var(--ink-soft); }
+
+/* =========================================================
+   AUDIENCE
+   ========================================================= */
+.audience {
+  background: var(--paper-2);
+  padding: clamp(80px, 10vw, 130px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.audience-header {
+  display: grid; grid-template-columns: 1fr; gap: 24px;
+  margin-bottom: 48px;
+}
+@media (min-width: 800px) { .audience-header { grid-template-columns: 1fr 1fr; align-items: end; } }
+.audience-header p { font-size: 17px; line-height: 1.6; max-width: 480px; }
+
+.audience-list {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+.aud-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid var(--line);
+}
+@media (min-width: 700px) { .aud-row { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .aud-row { grid-template-columns: repeat(4, 1fr); } }
+.aud-row:last-child { border-bottom: none; }
+
+.aud-item {
+  padding: 22px 22px;
+  border-right: 1px solid var(--line);
+  display: flex; gap: 14px; align-items: start;
+  transition: background 220ms ease;
+}
+.aud-item:hover { background: var(--mustard); }
+.aud-item:last-child { border-right: none; }
+@media (max-width: 700px) {
+  .aud-item { border-right: none; border-bottom: 1px solid var(--line-2); }
+  .aud-item:last-child { border-bottom: none; }
+}
+.aud-icon {
+  width: 24px; height: 24px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.aud-item-content h4 {
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: var(--sans);
+  letter-spacing: -0.005em;
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+.aud-item-content p {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   FOUNDERS
+   ========================================================= */
+.founders {
+  padding: clamp(80px, 10vw, 130px) 0;
+}
+.founders-header { max-width: 720px; margin-bottom: 48px; }
+
+.founders-grid {
+  display: grid; grid-template-columns: 1fr;
+  gap: 48px;
+}
+@media (min-width: 800px) { .founders-grid { grid-template-columns: 1fr 1fr; gap: 56px; } }
+
+.founder {
+  display: grid;
+  grid-template-columns: 88px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.founder-avatar {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--sage) 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-size: 36px; font-weight: 500;
+  color: var(--paper); font-style: italic;
+  position: relative;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-md);
+}
+.founder-avatar::after {
+  content: '';
+  position: absolute; inset: -4px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.founder h3 {
+  font-size: 22px;
+  font-weight: 600;
+  font-family: var(--serif);
+  margin-bottom: 4px;
+}
+.founder .creds {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 14px;
+}
+.founder p { font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); }
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact {
+  background: var(--ink);
+  color: var(--paper);
+  padding: clamp(80px, 10vw, 120px) 0;
+  position: relative; overflow: hidden;
+}
+.contact::before {
+  content: '';
+  position: absolute; top: -200px; left: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(241,208,37,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.contact::after {
+  content: '';
+  position: absolute; bottom: -200px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(125,162,162,0.22) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.contact-grid {
+  position: relative;
+  display: grid; grid-template-columns: 1fr;
+  gap: 48px; align-items: start;
+}
+@media (min-width: 900px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.contact h2 {
+  color: var(--paper);
+  margin-bottom: 22px;
+}
+.contact h2 .gold { color: var(--gold); font-style: italic; }
+.contact-intro p {
+  font-size: 16.5px;
+  line-height: 1.55;
+  color: rgba(245,245,245,0.78);
+  max-width: 540px;
+  margin-bottom: 28px;
+}
+
+.contact-direct {
+  margin-top: 32px;
+  display: grid;
+  gap: 16px;
+}
+.contact-line {
+  display: flex; gap: 14px; align-items: center;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--r-md);
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.contact-line:hover { background: rgba(255,255,255,0.08); border-color: rgba(241,208,37,0.4); }
+.contact-line-icon {
+  width: 38px; height: 38px;
+  background: rgba(241,208,37,0.14);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.contact-line-label {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245,245,245,0.55);
+  margin-bottom: 2px;
+}
+.contact-line-value {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--paper);
+}
+.contact-line-value a:hover { color: var(--gold); }
+
+/* Form */
+.contact-form {
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: var(--r-lg);
+  padding: 32px 30px;
+  box-shadow: var(--shadow-lg);
+}
+.contact-form .form-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 8px;
+}
+.contact-form h3 {
+  font-family: var(--serif);
+  font-size: 26px; font-weight: 600;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+.contact-form .form-sub {
+  font-size: 13px; color: var(--ink-soft);
+  margin-bottom: 24px;
+}
+.field { display: block; margin-bottom: 14px; }
+.field label {
+  display: block;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--sage); margin-bottom: 6px;
+}
+.field input, .field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  font-size: 14px;
+  font-family: var(--sans);
+  transition: border-color 200ms ease, background 200ms ease;
+}
+.field input:focus, .field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--paper);
+}
+.field textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 500px) { .field-row { grid-template-columns: 1fr; gap: 0; } }
+.contact-form .btn-gold {
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+  font-size: 14px;
+  margin-top: 8px;
+}
+.contact-form .reassure {
+  margin-top: 12px;
+  font-size: 11.5px;
+  text-align: center;
+  color: var(--sage);
+  letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+  padding: 48px 0 32px;
+}
+.footer-inner {
+  display: grid; grid-template-columns: 1fr;
+  gap: 28px; align-items: center;
+}
+@media (min-width: 700px) { .footer-inner { grid-template-columns: 1fr auto 1fr; } }
+.footer-brand { display: flex; align-items: center; gap: 12px; }
+.footer-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 14px; text-align: center;
+}
+.footer-meta {
+  text-align: right;
+  font-size: 12px;
+  color: var(--sage);
+  letter-spacing: 0.04em;
+}
+@media (max-width: 700px) { .footer-meta { text-align: left; } }
+.footer-bar {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line-2);
+  font-size: 11px;
+  color: var(--sage);
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+.footer-bar a { color: var(--primary); }
+
+/* =========================================================
+   ANIMATION
+   ========================================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 700ms ease, transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.fade-up.in { opacity: 1; transform: translateY(0); }
+
+.hero .stagger > * {
+  opacity: 0; transform: translateY(16px);
+  animation: heroIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+.hero .stagger > *:nth-child(1) { animation-delay: 80ms; }
+.hero .stagger > *:nth-child(2) { animation-delay: 200ms; }
+.hero .stagger > *:nth-child(3) { animation-delay: 340ms; }
+.hero .stagger > *:nth-child(4) { animation-delay: 480ms; }
+.hero .stagger > *:nth-child(5) { animation-delay: 620ms; }
+@keyframes heroIn { to { opacity: 1; transform: translateY(0); } }
+
+.hero-mark { animation: markIn 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms both; }
+@keyframes markIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+</style>
+</head>
+<body>
+
+<!-- =============== NAV =============== -->
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#top" class="brand" aria-label="Integrated Wellness Institute home">
+      <span class="brand-rings" aria-hidden="true">
+        <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+      </span>
+      <span class="brand-name"><span class="full">Integrated Wellness Institute</span><span class="short">IWI</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#peace">PEACE Model</a>
+      <a href="#audience">Who We Serve</a>
+      <a href="#founders">Founders</a>
+    </div>
+    <a href="#contact" class="btn btn-primary btn-sm">
+      Contact Us
+      <span class="arrow" aria-hidden="true">→</span>
+    </a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- =============== HERO =============== -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="stagger">
+      <div class="hero-eyebrow">
+        <span class="dot" aria-hidden="true"></span>
+        <span>Integrated Wellness Institute</span>
+      </div>
+      <h1>Resilience training for the people who run <span class="accent">toward the crisis</span>.</h1>
+      <p class="hero-sub">IWI builds workforce resilience for first responders, military, healthcare, and other trauma-exposed service professions. Evidence-based course-and-book training systems that move resilience from a workshop to a permanent capability.</p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn btn-primary">
+          Schedule a Consultation
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#programs" class="btn btn-ghost">Explore Programs</a>
+      </div>
+      <div class="hero-meta">
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 1L10 6H15L11 9L13 14L8 11L3 14L5 9L1 6H6L8 1Z" stroke-linejoin="round"/></svg>
+          NBCC ACEP No. 7535
+        </span>
+        <span class="pipe">|</span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 13L6 9L9 12L14 5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 5H14V9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Doctorate-led
+        </span>
+        <span class="pipe">|</span>
+        <span class="meta-item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M8 4V8L11 10" stroke-linecap="round"/></svg>
+          Turnkey rollout
+        </span>
+      </div>
+    </div>
+
+    <div class="hero-mark" aria-hidden="true">
+      <div class="hero-mark-from">From <em>concept</em></div>
+      <div class="hero-mark-rings">
+        <div class="big-ring"></div>
+        <div class="big-ring"></div>
+        <div class="big-ring"></div>
+      </div>
+      <div class="hero-mark-to">to <strong>capability</strong>.</div>
+      <div class="hero-mark-meta">
+        <span>Train</span>
+        <span>Reinforce</span>
+        <span>Sustain</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== ABOUT =============== -->
+<section class="about fade-up" id="about">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">01</span>
+      <span class="label">About IWI</span>
+      <span class="rule"></span>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h2>We treat resilience like the professional skill it is.</h2>
+      </div>
+      <div class="about-body">
+        <p>The Integrated Wellness Institute was founded by two doctorate-level clinicians with one shared conviction: <strong>resilience is a capability, not a trait</strong>. Like any capability, it can be trained, practiced, and reinforced.</p>
+        <p>That conviction shapes everything we build. Our programs are evidence-based, designed for the operational realities of high-demand professions, and engineered for adoption — not just delivery. We pair every course with a companion book so the work continues long after the training room.</p>
+        <p>Our mission: equip the people who carry the weight of public safety, public health, and public service with tools that hold when the work demands the most of them.</p>
+      </div>
+    </div>
+
+    <div class="about-pillars">
+      <div class="pillar">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 6V12C4 17 7.5 20.5 12 22C16.5 20.5 20 17 20 12V6L12 2Z" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h4>Evidence-based</h4>
+        <p>Curriculum built on clinical research and refined through years of direct practice with first responders and high-demand professionals.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15 14" stroke-linecap="round"/></svg>
+        <h4>Operationally realistic</h4>
+        <p>Designed for shift schedules, chronic stress, and the people who don't have the luxury of pausing to recover. No theory you can't use Monday.</p>
+      </div>
+      <div class="pillar">
+        <svg class="pillar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 22V14L12 9L19 14V22" stroke-linejoin="round"/><path d="M9 22V17H15V22"/><circle cx="12" cy="5" r="3"/></svg>
+        <h4>Built to scale</h4>
+        <p>Turnkey programs that roll out enterprise-wide without consuming your training infrastructure or operational capacity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PROGRAMS =============== -->
+<section class="programs fade-up" id="programs">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">02</span>
+      <span class="label">Our Programs</span>
+      <span class="rule"></span>
+    </div>
+    <div class="programs-header">
+      <h2>Two flagship programs.<br>One framework.</h2>
+      <p>Both programs are anchored in our PEACE Resilience Model — applied to two distinct organizational needs: workforce-wide resilience, and peer support team effectiveness.</p>
+    </div>
+
+    <div class="program-grid">
+      <article class="program">
+        <span class="program-tag">Workforce Program</span>
+        <div class="program-num">01</div>
+        <h3>Mastering Resilience</h3>
+        <div class="program-edition">First Responder Edition</div>
+        <p class="program-desc">A scalable, workforce-wide resilience training designed for trauma-exposed professionals. Embeds resilience as a daily, repeatable practice across the entire organization.</p>
+        <ul class="program-features">
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>5 PEACE modules · 1.5 hrs of video · 365-day access</span>
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Companion book: <em>Mastering Resilience: Strategies for High-Demand Professionals</em></span>
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Self-paced, instructor-led, or hybrid delivery</span>
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Implementation guide for in-service or academy integration</span>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          Bring it to your organization
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <article class="program">
+        <span class="program-tag">Peer Support Program</span>
+        <div class="program-num">02</div>
+        <h3>Peer Support in Action</h3>
+        <div class="program-edition">Skills for First Responders</div>
+        <p class="program-desc">A practical, competency-based training that equips peer support team members to protect, engage, assess, refer, and support their fellow personnel — turning peer support from goodwill into infrastructure.</p>
+        <ul class="program-features">
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>PEACE-anchored · 365-day course access · certificate of completion</span>
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Four quarterly team practice activities for sustained skill-building</span>
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Companion book: <em>Peer Support Blueprint</em> (forthcoming)</span>
+          </li>
+          <li>
+            <svg class="check" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8L7 12L13 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Self-paced + interactive webinar or in-person delivery</span>
+          </li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-sm">
+          Train your peer team
+          <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =============== PEACE MODEL =============== -->
+<section class="peace fade-up" id="peace">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">03</span>
+      <span class="label">The Methodology</span>
+      <span class="rule"></span>
+    </div>
+    <div class="peace-header">
+      <h2>The PEACE Resilience Model.</h2>
+      <p>Five evidence-based components that build resilience as a daily, repeatable practice — refined through years of working directly with organizations operating under chronic stress and traumatic exposure.</p>
+    </div>
+
+    <div class="peace-grid">
+      <article class="peace-card">
+        <span class="num">01</span>
+        <span class="letter">P</span>
+        <h3>Psychoeducation on Trauma</h3>
+        <p>Identify the impact of trauma on the mind and body — and why understanding the mechanism is the first step toward managing it.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">02</span>
+        <span class="letter">E</span>
+        <h3>Expand Awareness</h3>
+        <p>Build emotional and environmental awareness so personnel can read their own state — and the situation — before either escalates.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">03</span>
+        <span class="letter">A</span>
+        <h3>Activate Healthy Habits</h3>
+        <p>Practical routines that meet needs across every level of wellbeing: physical, cognitive, emotional, and relational.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">04</span>
+        <span class="letter">C</span>
+        <h3>Coping with Acute Stress</h3>
+        <p>Evidence-based techniques personnel can use in the moment, on scene, on shift — not just in a quiet room afterward.</p>
+      </article>
+      <article class="peace-card">
+        <span class="num">05</span>
+        <span class="letter">E</span>
+        <h3>Establish a Plan</h3>
+        <p>An individualized plan personnel actually return to — for building resilience and maintaining wellbeing through a long career.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =============== AUDIENCE =============== -->
+<section class="audience fade-up" id="audience">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">04</span>
+      <span class="label">Who We Serve</span>
+      <span class="rule"></span>
+    </div>
+    <div class="audience-header">
+      <h2>Built for the organizations who carry the weight of public service.</h2>
+      <p>If your workforce operates under chronic stress, traumatic exposure, or sustained performance pressure, IWI was built with you in mind.</p>
+    </div>
+
+    <div class="audience-list">
+      <div class="aud-row">
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 6V12C4 17 7.5 20.5 12 22C16.5 20.5 20 17 20 12V6L12 2Z" stroke-linejoin="round"/><circle cx="12" cy="11" r="2"/></svg>
+          <div class="aud-item-content">
+            <h4>Sheriff's Offices</h4>
+            <p>Sworn deputies, corrections, court services.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L4 6V12C4 17 7.5 20.5 12 22C16.5 20.5 20 17 20 12V6L12 2Z" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="aud-item-content">
+            <h4>Police Departments</h4>
+            <p>Patrol, investigations, support staff.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 8H17M7 12H17M7 16H13" stroke-linecap="round"/></svg>
+          <div class="aud-item-content">
+            <h4>State Law Enforcement</h4>
+            <p>Highway patrol, statewide units.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="14" rx="1"/><path d="M3 10H21M9 6V4C9 3 9.5 2 10.5 2H13.5C14.5 2 15 3 15 4V6" stroke-linejoin="round"/></svg>
+          <div class="aud-item-content">
+            <h4>Corrections</h4>
+            <p>Detention, jails, probation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C12 2 6 7 6 13C6 17 8.5 20 12 20C15.5 20 18 17 18 13C18 7 12 2 12 2Z" stroke-linejoin="round"/><circle cx="12" cy="14" r="2"/></svg>
+          <div class="aud-item-content">
+            <h4>Fire Rescue</h4>
+            <p>Suppression, technical rescue, hazmat.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2V22M2 12H22" stroke-linecap="round"/><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+          <div class="aud-item-content">
+            <h4>EMS</h4>
+            <p>EMTs, paramedics, flight medics.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7V12L15 14" stroke-linecap="round"/><path d="M2 12H4M20 12H22M12 2V4M12 20V22" stroke-linecap="round"/></svg>
+          <div class="aud-item-content">
+            <h4>Emergency Communications</h4>
+            <p>911 dispatch, telecommunicators.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12L8 7H16L21 12V18H3V12Z" stroke-linejoin="round"/><circle cx="12" cy="5" r="2"/></svg>
+          <div class="aud-item-content">
+            <h4>Emergency Response Teams</h4>
+            <p>SWAT, tactical EMS, K9.</p>
+          </div>
+        </div>
+      </div>
+      <div class="aud-row">
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="6" width="16" height="14" rx="2"/><path d="M9 6V4C9 3 9.5 2 10.5 2H13.5C14.5 2 15 3 15 4V6"/><path d="M12 11V16M9.5 13.5H14.5" stroke-linecap="round"/></svg>
+          <div class="aud-item-content">
+            <h4>Emergency Medicine</h4>
+            <p>ER clinicians, trauma teams.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12C3 12 6 5 12 5C18 5 21 12 21 12C21 12 18 19 12 19C6 19 3 12 3 12Z"/><circle cx="12" cy="12" r="3"/></svg>
+          <div class="aud-item-content">
+            <h4>Trauma &amp; Critical Care</h4>
+            <p>ICU, trauma nursing, hospital teams.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C7 2 4 5 4 9V19C4 20 5 21 6 21H18C19 21 20 20 20 19V9C20 5 17 2 12 2Z" stroke-linejoin="round"/><circle cx="9" cy="11" r="1.5"/><circle cx="15" cy="11" r="1.5"/></svg>
+          <div class="aud-item-content">
+            <h4>Child Welfare / CPS</h4>
+            <p>Caseworkers, investigators, supervisors.</p>
+          </div>
+        </div>
+        <div class="aud-item">
+          <svg class="aud-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 22V14L12 9L19 14V22" stroke-linejoin="round"/><path d="M9 22V17H15V22"/><circle cx="12" cy="5" r="3"/></svg>
+          <div class="aud-item-content">
+            <h4>Military &amp; Veterans</h4>
+            <p>Active duty, reservists, veterans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== FOUNDERS =============== -->
+<section class="founders fade-up" id="founders">
+  <div class="container">
+    <div class="section-marker">
+      <span class="num">05</span>
+      <span class="label">The Founders</span>
+      <span class="rule"></span>
+    </div>
+    <div class="founders-header">
+      <h2>Doctorate-level clinicians.<br>Practitioner credibility.</h2>
+    </div>
+
+    <div class="founders-grid">
+      <div class="founder">
+        <div class="founder-avatar" aria-hidden="true">A</div>
+        <div>
+          <h3>Dr. Allison Kanter-Agliata</h3>
+          <div class="creds">PhD · BCC · CFRP</div>
+          <p>Co-founder of the Integrated Wellness Institute and a Board Certified Coach with deep experience supporting first responders, executives, and high-performing teams. Co-developer of the PEACE Resilience Model and the IWI training curriculum.</p>
+        </div>
+      </div>
+      <div class="founder">
+        <div class="founder-avatar" aria-hidden="true">S</div>
+        <div>
+          <h3>Dr. Sarah Stewart-Spencer</h3>
+          <div class="creds">PhD · LMHC · NCC · CFRP</div>
+          <p>Co-founder of IWI, Licensed Mental Health Counselor, and National Certified Counselor. Specializes in trauma exposure in high-demand professions and has built training programs adopted by departments and organizations across the country.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CONTACT =============== -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-intro">
+      <div class="section-marker">
+        <span class="num" style="color: var(--gold);">06</span>
+        <span class="label" style="color: rgba(245,245,245,0.65);">Get in Touch</span>
+        <span class="rule" style="background: rgba(255,255,255,0.15);"></span>
+      </div>
+      <h2>Let's talk about your <span class="gold">workforce</span>.</h2>
+      <p>A short conversation is the easiest way to start. We'll learn about your organization, your existing wellness infrastructure, and your goals — and we'll show you exactly how IWI programs fit into your operational reality.</p>
+
+      <div class="contact-direct">
+        <a href="mailto:contact@theiwinstitute.com" class="contact-line">
+          <span class="contact-line-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="16" height="12" rx="1.5"/><path d="M2 6L10 11L18 6" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <div class="contact-line-label">Email</div>
+            <div class="contact-line-value">contact@theiwinstitute.com</div>
+          </div>
+        </a>
+        <a href="tel:9046693345" class="contact-line">
+          <span class="contact-line-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4C3 3 4 2 5 2H7L9 6L7 8C8 11 9 12 12 13L14 11L18 13V15C18 16 17 17 16 17C9 17 3 11 3 4Z" stroke-linejoin="round"/></svg>
+          </span>
+          <div>
+            <div class="contact-line-label">Phone</div>
+            <div class="contact-line-value">904.669.3345</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-eyebrow">Send us a message</div>
+      <h3>Schedule a consultation.</h3>
+      <p class="form-sub">We respond within one business day.</p>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Full name" required>
+        </div>
+        <div class="field">
+          <label for="role">Role / Title</label>
+          <input type="text" id="role" name="role" placeholder="e.g., Wellness Director">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="organization">Organization</label>
+        <input type="text" id="organization" name="organization" placeholder="Department or organization name">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="work email" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="msg">How can we help?</label>
+        <textarea id="msg" name="msg" placeholder="A short note about what you're exploring."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-gold">
+        Send Message
+        <span class="arrow" aria-hidden="true">→</span>
+      </button>
+      <div class="reassure">Direct to clinicians, not a sales team</div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- =============== FOOTER =============== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-rings" aria-hidden="true">
+          <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+        </span>
+        <div>
+          <div style="font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--primary);">Integrated Wellness Institute</div>
+          <div style="font-size: 11px; color: var(--sage); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 2px;">theiwinstitute.com</div>
+        </div>
+      </div>
+      <div class="footer-tag">From concept to capability.</div>
+      <div class="footer-meta">
+        <a href="mailto:contact@theiwinstitute.com" style="color: var(--ink-soft);">contact@theiwinstitute.com</a><br>
+        <span style="color: var(--ink-soft);">904.669.3345</span>
+      </div>
+    </div>
+    <div class="footer-bar">
+      © Integrated Wellness Institute · NBCC ACEP No. 7535 · <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Fade-up on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// Contact form → mailto fallback
+// Replace this with a real form handler (Formspree, Netlify Forms, custom endpoint) when ready
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data = new FormData(this);
+  const subject = encodeURIComponent('Website inquiry — ' + (data.get('organization') || data.get('name') || 'IWI'));
+  const body = encodeURIComponent(
+    'Name: ' + (data.get('name') || '') + '\n' +
+    'Role: ' + (data.get('role') || '') + '\n' +
+    'Organization: ' + (data.get('organization') || '') + '\n' +
+    'Email: ' + (data.get('email') || '') + '\n' +
+    'Phone: ' + (data.get('phone') || '') + '\n\n' +
+    'Message:\n' + (data.get('msg') || '')
+  );
+  window.location.href = 'mailto:contact@theiwinstitute.com?subject=' + subject + '&body=' + body;
+});
+</script>
+
+</body>
+</html>
