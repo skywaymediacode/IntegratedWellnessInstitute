@@ -309,7 +309,7 @@ p.lead { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; }
   top: 0;
   width: clamp(110px, 13vw, 150px);
   height: clamp(110px, 13vw, 150px);
-  border: 2.5px solid var(--primary);
+  border: 8px solid var(--primary);
   border-radius: 50%;
   transition: transform 600ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -348,6 +348,99 @@ p.lead { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; }
   background: var(--gold);
   border-radius: 50%;
 }
+
+/* =========================================================
+   STAT BAR
+   ========================================================= */
+.stat-bar {
+  background: var(--paper-2);
+  padding: clamp(60px, 8vw, 96px) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--line-2);
+  border-bottom: 1px solid var(--line-2);
+}
+.stat-bar::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; max-width: 700px;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(241,208,37,0.10) 0%, transparent 60%);
+  pointer-events: none;
+}
+.stat-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.stat-eyebrow .line {
+  width: 28px; height: 1px;
+  background: var(--sage);
+}
+.stat-eyebrow .label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.stat-number {
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--serif);
+  font-size: clamp(80px, 13vw, 160px);
+  line-height: 1;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  font-feature-settings: "lnum";
+}
+.stat-number .num {
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.stat-number .plus {
+  color: var(--gold-d);
+  margin-left: 6px;
+  font-size: 0.62em;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.stat-rule {
+  width: 56px; height: 3px;
+  background: var(--gold);
+  margin: 22px auto 0;
+  border-radius: 2px;
+}
+
+.stat-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(18px, 1.9vw, 24px);
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin: 26px auto 0;
+  line-height: 1.4;
+  font-weight: 400;
+}
+.stat-text strong {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ink);
+}
+.stat-text em { color: var(--primary); }
 
 /* =========================================================
    ABOUT
@@ -976,6 +1069,24 @@ p.lead { font-size: clamp(17px, 1.5vw, 19px); line-height: 1.55; }
   </div>
 </section>
 
+<!-- =============== STAT BAR =============== -->
+<section class="stat-bar fade-up" aria-label="Training milestone">
+  <div class="container">
+    <div class="stat-content">
+      <div class="stat-eyebrow">
+        <span class="line"></span>
+        <span class="label">Trusted in the field</span>
+        <span class="line"></span>
+      </div>
+      <div class="stat-number">
+        <span class="num" data-count="3500">0</span><span class="plus">+</span>
+      </div>
+      <div class="stat-rule" aria-hidden="true"></div>
+      <p class="stat-text">Join the <strong>3500+ first responders</strong> who have been trained in <em>Mastering Resilience</em>.</p>
+    </div>
+  </div>
+</section>
+
 <!-- =============== ABOUT =============== -->
 <section class="about fade-up" id="about">
   <div class="container">
@@ -1400,6 +1511,33 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+// Number counter — animates once when scrolled into view
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const animateCount = (el, target, duration) => {
+  if (prefersReducedMotion) { el.textContent = target; return; }
+  const start = performance.now();
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const tick = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const value = Math.floor(easeOut(progress) * target);
+    el.textContent = value;
+    if (progress < 1) requestAnimationFrame(tick);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(tick);
+};
+const counterObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = parseInt(e.target.dataset.count, 10);
+      animateCount(e.target, target, 1800);
+      counterObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
 
 // Contact form → mailto fallback
 // Replace this with a real form handler (Formspree, Netlify Forms, custom endpoint) when ready
